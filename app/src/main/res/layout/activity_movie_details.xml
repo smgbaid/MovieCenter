@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MovieDetailsActivity"
+    android:background="#191926">
+
+    <ImageView
+        android:id="@+id/movieCover"
+        android:layout_width="530dp"
+        android:layout_height="293dp"
+        android:src="@drawable/movie_cover"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guidelineVertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.55"/>
+
+    <TextView
+        android:id="@+id/movieTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Avengers:\nEnd Game"
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/movieCover"
+        app:layout_constraintBottom_toTopOf="@id/movieGenre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guidelineVertical"/>
+
+    <TextView
+        android:id="@+id/movieGenre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="4dp"
+        android:text="Action, Adventure, Fantasy"
+        android:textColor="#FF3466"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/movieTitle"
+        app:layout_constraintBottom_toTopOf="@id/starIcon1"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <ImageView
+        android:id="@+id/starIcon1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/star_icon_full"
+        app:layout_constraintTop_toBottomOf="@id/movieGenre"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/starIcon2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="3.25dp"
+        android:src="@drawable/star_icon_full"
+        app:layout_constraintTop_toBottomOf="@id/movieGenre"
+        app:layout_constraintStart_toEndOf="@id/starIcon1" />
+
+    <ImageView
+        android:id="@+id/starIcon3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="3.25dp"
+        android:src="@drawable/star_icon_full"
+        app:layout_constraintTop_toBottomOf="@id/movieGenre"
+        app:layout_constraintStart_toEndOf="@id/starIcon2" />
+
+    <ImageView
+        android:id="@+id/starIcon4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="3.25dp"
+        android:src="@drawable/star_icon_full"
+        app:layout_constraintTop_toBottomOf="@id/movieGenre"
+        app:layout_constraintStart_toEndOf="@id/starIcon3" />
+
+    <ImageView
+        android:id="@+id/starIcon5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="3.25dp"
+        android:src="@drawable/star_icon_empty"
+        app:layout_constraintTop_toBottomOf="@id/movieGenre"
+        app:layout_constraintStart_toEndOf="@id/starIcon4" />
+
+    <TextView
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="9dp"
+        android:text="125 REVIEWS"
+        android:textSize="14sp"
+        android:textColor="#6D6D80"
+        app:layout_constraintTop_toBottomOf="@id/movieGenre"
+
+        app:layout_constraintStart_toEndOf="@id/starIcon5"/>
+
+    <TextView
+        android:id="@+id/storyline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:text="Storyline"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#ECECEC"
+        app:layout_constraintTop_toBottomOf="@id/starIcon5"
+
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/storylineText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/avengers_storyline"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/storyline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/storylineBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="storylineText"/>
+
+
+   <TextView
+       android:id="@+id/actors"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:layout_marginStart="16dp"
+       android:layout_marginTop="24dp"
+       android:text="Cast"
+       android:textStyle="bold"
+       android:textColor="@color/white"
+       app:layout_constraintTop_toBottomOf="@id/storylineBarrier"
+
+       app:layout_constraintStart_toStartOf="parent"/>
+
+    <ImageView
+        android:id="@+id/actor1"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="7dp"
+        android:src="@drawable/tony"
+        app:layout_constraintTop_toBottomOf="@id/actors"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/actor2"/>
+
+    <ImageView
+        android:id="@+id/actor2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="7dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/captain"
+        app:layout_constraintTop_toBottomOf="@id/actors"
+        app:layout_constraintStart_toEndOf="@id/actor1"
+        app:layout_constraintEnd_toStartOf="@id/actor3"/>
+
+    <ImageView
+        android:id="@+id/actor3"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="7dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/halk"
+        app:layout_constraintTop_toBottomOf="@id/actors"
+        app:layout_constraintStart_toEndOf="@id/actor2"
+        app:layout_constraintEnd_toStartOf="@id/actor4"/>
+
+    <ImageView
+        android:id="@+id/actor4"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/tor"
+        app:layout_constraintTop_toBottomOf="@id/actors"
+        app:layout_constraintStart_toEndOf="@id/actor3"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Robert Downey Jr."
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/actor1"
+        app:layout_constraintStart_toStartOf="@id/actor1"
+        app:layout_constraintEnd_toEndOf="@id/actor1"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Chris Evans"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/actor2"
+        app:layout_constraintStart_toStartOf="@id/actor2"
+        app:layout_constraintEnd_toEndOf="@id/actor2"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Mark Ruffalo"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/actor3"
+        app:layout_constraintStart_toStartOf="@id/actor3"
+        app:layout_constraintEnd_toEndOf="@id/actor3"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Chris Hemsworth"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/actor4"
+        app:layout_constraintStart_toStartOf="@id/actor4"
+        app:layout_constraintEnd_toEndOf="@id/actor4"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
